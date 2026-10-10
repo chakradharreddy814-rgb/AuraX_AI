@@ -1,0 +1,28 @@
+# frontend deps
+node_modules
+frontend/node_modules
+
+# builds
+dist
+frontend/dist
+frontend/build
+.vite
+
+# python
+backend/venv
+backend/.venv
+__pycache__
+*.py[cod]
+
+# secrets — never bake into an image
+.env
+.env.*
+!.env.example
+
+# local dev db + logs
+backend/utils/local_db.json
+*.log
+.freebuff/
+
+# docker files themselves
+docker-compose.yml

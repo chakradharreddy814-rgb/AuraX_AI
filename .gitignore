@@ -1,0 +1,34 @@
+# ── Secrets / environment ─────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# ── Node / Vite build output ──────────────────────────
+node_modules/
+dist/
+.vite/
+
+# ── Local dev data (JSON fallback database) ──────────
+backend/utils/local_db.json
+
+# ── App / tool state ──────────────────────────────────
+.freebuff/
+
+# ── OS / editor junk ──────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+
+# ── Local archive / nested duplicate copy ────────────
+AuraX-AI.zip
+/AuraX-AI/
+
+# ── Local archive / nested duplicate copy ────────────
+AuraX-AI.zip
+/AuraX-AI/
