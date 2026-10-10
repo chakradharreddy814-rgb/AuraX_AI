@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Stylized A Left Leg -->
+  <path d="M18 84 L46 16 L54 16 L28 84 Z" fill="#0c0a09" />
+  <!-- Stylized A Right Leg -->
+  <path d="M46 16 L54 16 L82 84 L70 84 Z" fill="#0c0a09" />
+  <!-- Inner Purple Triangle -->
+  <path d="M38 78 L50 50 L62 78 Z" fill="#7a1cff" />
+</svg>

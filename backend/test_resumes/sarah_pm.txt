@@ -1,0 +1,11 @@
+Sarah Chen
+Email: sarah.chen@example.com
+Phone: (555) 555-5555
+Location: Austin, TX
+
+SUMMARY
+Product Manager with 6 years of experience managing software products.
+
+TECHNICAL SKILLS
+- Agile, Scrum, Jira, Product Roadmap, User Research
+- Basic Python and SQL

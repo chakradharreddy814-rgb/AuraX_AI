@@ -1,0 +1,27 @@
+John Doe
+Email: john.doe@example.com
+Phone: (555) 123-4567
+Location: San Francisco, CA
+
+SUMMARY
+Experienced Software Engineer with a strong background in developing scalable web applications using Python, Flask, and JavaScript.
+
+TECHNICAL SKILLS
+- Programming Languages: Python, JavaScript, HTML, CSS, SQL
+- Frameworks & Libraries: Flask, React, Node.js, Bootstrap
+- Databases: MongoDB, PostgreSQL, Redis
+- Tools & DevOps: Git, Docker, AWS, Linux
+
+PROFESSIONAL EXPERIENCE
+Senior Software Engineer | Acme Corp (2023 - Present)
+- Designed and implemented microservices using Flask and Python.
+- Led the migration of frontend applications to React, improving user interaction and page response times.
+- Configured CI/CD pipelines using GitHub Actions and containerized applications with Docker.
+
+Software Engineer | Tech Solutions Inc (2020 - 2023)
+- Built backend APIs for high-traffic web applications.
+- Collaborated with database administrators to optimize MongoDB queries.
+- Participated in agile development processes and peer code reviews.
+
+EDUCATION
+Bachelor of Science in Computer Science | University of California, Berkeley (2016 - 2020)

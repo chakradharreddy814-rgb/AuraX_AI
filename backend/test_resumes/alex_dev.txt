@@ -1,0 +1,13 @@
+Alex Rivera
+Email: alex.rivera@example.com
+Phone: (555) 987-6543
+Location: Seattle, WA
+
+SUMMARY
+Backend developer with 4 years of experience writing Python APIs.
+
+TECHNICAL SKILLS
+- Languages: Python, SQL
+- Frameworks: Django, Flask
+- Databases: PostgreSQL, Redis
+- Tools: Docker, AWS, Git
