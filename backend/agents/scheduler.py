@@ -108,9 +108,35 @@ if not MONGODB_URI:
         "(see the setup guide) before running this agent."
     )
 
-_mongo_client = MongoClient(MONGODB_URI)
-_db = _mongo_client[MONGODB_DB_NAME]
-_scheduled_interviews = _db["scheduled_interviews"]
+_mongo_client = None
+_db = None
+_scheduled_interviews = None
+_mongo_error = None
+
+
+def _init_mongo():
+    """Lazily connect to MongoDB on first use instead of at import time.
+
+    Import-time connection made the whole backend crash on startup whenever
+    the Atlas cluster was unreachable (e.g. no network / DNS failure). Now a
+    connection failure only disables persistence; log a warning and retry on
+    the next call.
+    """
+    global _mongo_client, _db, _scheduled_interviews, _mongo_error
+    if _mongo_client is not None:
+        return _scheduled_interviews
+    if _mongo_error is not None:
+        return None  # previous attempt failed; do not retry every request
+    try:
+        _mongo_client = MongoClient(MONGODB_URI)
+        _db = _mongo_client[MONGODB_DB_NAME]
+        _scheduled_interviews = _db["scheduled_interviews"]
+        return _scheduled_interviews
+    except Exception as exc:
+        _mongo_error = str(exc)
+        _mongo_client = None
+        print(f"[Scheduler] Warning: MongoDB unavailable, persistence disabled: {exc}")
+        return None
 
 # ---------------------------------------------------------------------------
 # 2. RULE ENGINE — pure business logic, zero AI involved.
@@ -478,7 +504,13 @@ def save_scheduled_slot(
         "created_at": datetime.now(timezone.utc),
     }
 
-    result = _scheduled_interviews.insert_one(document)
+    collection = _init_mongo()
+    if collection is None:
+        print("[Scheduler] Skipping slot persistence — MongoDB is unavailable.")
+        document["_id"] = None
+        return document
+
+    result = collection.insert_one(document)
     document["_id"] = str(result.inserted_id)
     return document
 
